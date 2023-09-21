@@ -32,6 +32,8 @@ nav img {
   border-radius: 0px;
 }
 
-.ul li a {
+.navcustom {
+  margin: 0px 20px;
+  font-size: 26px;
   color: white;
 }
