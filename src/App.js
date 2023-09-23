@@ -1,7 +1,8 @@
 import './App.css';
-import mainLogo from './images/mainLogo.jpg';
+import mainLogo from './images/mainLogo.png';
 import HomeScreen from './screens/HomeScreen.js';
 import { Route, Routes } from 'react-router-dom';
+import products from './products.js';
 
 
 function App() {
@@ -28,14 +29,28 @@ function App() {
         </div>
       </nav >
 
-
-
-
       <main>
         <Routes>
           <Route path="/" element={<HomeScreen />} />
         </Routes>
       </main>
+
+      <div className='product-list'>
+        {products.map((product) => (
+          <div key={product} className='product'>
+            <img src={product.image} alt='productImage' />
+            <h2>{product.name}</h2>
+            <p>Price: Ru.{product.price}</p>
+            <p>Rating: {product.price}</p>
+
+          </div>
+        ))}
+
+      </div>
+
+      <footer>
+        <div className='text-center' style={{ color: "wheat", backgroundColor: "black" }} >All rights reserved @2023</div>
+      </footer>
     </>
   );
 }

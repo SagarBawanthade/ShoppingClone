@@ -40,3 +40,29 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+.product {
+    margin-left: 0px;
+    margin-right: 6px;
+    margin-top: 10px;
+    display: inline-block;
+    height: 32rem;
+    width: 23rem;
+    border: 2px solid rgb(29, 148, 252);
+    border-radius: 10px;
+}
+
+.product img {
+    align-items: center;
+    width: 300px;
+    height: 400px;
+}
+
+.product h2 {
+    font-size: 20px;
+}
+
+.product p {
+    font-size: 12px;
+}
