@@ -47,18 +47,7 @@ const products = [
         numReviews: 25,
         description: "A beautiful floral print dress for women. Perfect for any occasion."
     },
-    {
-        name: "Chaddi5",
-        slug: "chaddi",
-        category: "Dresses",
-        image: "https://m.media-amazon.com/images/I/61xKClDY3AL._SX522_.jpg",
-        price: 49.99,
-        countInStock: 100,
-        brand: "Fashionista",
-        rating: 4.5,
-        numReviews: 25,
-        description: "A beautiful floral print dress for women. Perfect for any occasion."
-    },
+
 
 ];
 

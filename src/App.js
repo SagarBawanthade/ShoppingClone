@@ -2,7 +2,10 @@ import './App.css';
 import mainLogo from './images/mainLogo.png';
 import HomeScreen from './screens/HomeScreen.js';
 import { Route, Routes } from 'react-router-dom';
-import products from './products.js';
+import GroceryScreen from './screens/GroceryScreen';
+import FashionsScreen from './screens/FashionsScreen';
+import MobilesScreen from './screens/MobilesScreen';
+import ElectronicsScreen from './screens/ElectronicsScreen';
 
 
 function App() {
@@ -10,7 +13,7 @@ function App() {
     <>
       <nav className="navbar bg-primary navbar-expand-lg ">
         <div className="container">
-          <a className=" navbar-brand" href="sagar.com" ><img src={mainLogo} alt="mainLogo"></img></a>
+          <a className=" navbar-brand" href="/" ><img src={mainLogo} alt="mainLogo"></img></a>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <form className="d-flex" role="search">
@@ -21,9 +24,9 @@ function App() {
 
           <div className="navbaritems">
             <ul className="navbar-nav me-auto mb-3 mb-lg-0">
-              <li className="nav-item "><a className="nav-link navcustom" href="sagar.com">Login</a></li>
-              <li className="nav-item"><a className="nav-link navcustom " href="sagar.com">Sign up</a> </li>
-              <li className="nav-item"><a className="nav-link navcustom " href="sagar.com">Cart</a> </li>
+              <li className="nav-item "><a className="nav-link navcustom" href='/' >Login</a></li>
+              <li className="nav-item"><a className="nav-link navcustom " href='/' >Sign up</a> </li>
+              <li className="nav-item"><a className="nav-link navcustom " href='/' >Cart</a> </li>
             </ul>
           </div>
         </div>
@@ -32,21 +35,15 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomeScreen />} />
+          <Route path="/groceryscreen" element={<GroceryScreen />} />
+          <Route path="/fashionsscreen" element={<FashionsScreen />} />
+          <Route path="/mobilesscreen" element={<MobilesScreen />} />
+          <Route path="/electronicsscreen" element={<ElectronicsScreen />} />
+
         </Routes>
       </main>
 
-      <div className='product-list'>
-        {products.map((product) => (
-          <div key={product} className='product'>
-            <img src={product.image} alt='productImage' />
-            <h2>{product.name}</h2>
-            <p>Price: Ru.{product.price}</p>
-            <p>Rating: {product.price}</p>
 
-          </div>
-        ))}
-
-      </div>
 
       <footer>
         <div className='text-center' style={{ color: "wheat", backgroundColor: "black" }} >All rights reserved @2023</div>

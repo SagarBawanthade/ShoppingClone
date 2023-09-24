@@ -37,3 +37,11 @@ nav img {
   font-size: 26px;
   color: white;
 }
+
+footer {
+  margin-top: auto;
+  /*bottom: 0;*/
+  width: 100%;
+
+
+}

@@ -1,7 +1,4 @@
 /* HOmescreen Header*/
-
-
-
 .container {
     margin-top: 5px;
     width: 1880px;
@@ -41,28 +38,36 @@
     background-size: cover;
 }
 
+.product-list {
+    width: 100%;
+    display: block;
+    margin: 0px auto;
+}
 
 .product {
-    margin-left: 0px;
-    margin-right: 6px;
-    margin-top: 10px;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 80px;
+    margin-top: 40px;
+    margin-bottom: 50px;
     display: inline-block;
-    height: 32rem;
-    width: 23rem;
-    border: 2px solid rgb(29, 148, 252);
-    border-radius: 10px;
+    height: 18rem;
+    width: 18rem;
+    border: 1px solid rgb(185, 195, 204);
+    border-radius: 5px;
 }
 
 .product img {
-    align-items: center;
-    width: 300px;
-    height: 400px;
+    width: 170px;
+    height: 200px;
 }
 
 .product h2 {
-    font-size: 20px;
+    text-align: center;
+    font-size: 21px;
 }
 
 .product p {
-    font-size: 12px;
+    text-align: center;
+    font-size: 15px;
 }
