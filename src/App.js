@@ -6,6 +6,9 @@ import GroceryScreen from './screens/GroceryScreen';
 import FashionsScreen from './screens/FashionsScreen';
 import MobilesScreen from './screens/MobilesScreen';
 import ElectronicsScreen from './screens/ElectronicsScreen';
+import Packages from './datascreen/Packages';
+import Fruits from './datascreen/Fruits';
+import Vegetables from './datascreen/Vegetables';
 
 
 function App() {
@@ -39,6 +42,9 @@ function App() {
           <Route path="/fashionsscreen" element={<FashionsScreen />} />
           <Route path="/mobilesscreen" element={<MobilesScreen />} />
           <Route path="/electronicsscreen" element={<ElectronicsScreen />} />
+          <Route path="/packages" element={<Packages />} />
+          <Route path="/fruits" element={<Fruits />} />
+          <Route path="/vegetables" element={<Vegetables />} />
 
         </Routes>
       </main>
