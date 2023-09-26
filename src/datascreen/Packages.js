@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/GroceryScreen.css';
 import groceryData from '../datasets/grocerydata.js';
 import Rating from '../components/Rating.js';
+import { NavLink } from 'react-bootstrap';
 
 function Packages() {
 
@@ -17,10 +18,10 @@ function Packages() {
                 {groceryData.packages.map((packageItem) => (
                     <div key={packageItem.slug} className='grocery-card' >
                         <div className="grocery-image">
-                            <img src={packageItem.image} alt='packageItemImage' />
+                            <NavLink to={`/productrenderscreen/${packageItem.slug}`}><img src={packageItem.image} alt='packageItemImage' /></NavLink>
                         </div>
                         <div className='info'>
-                            <h3 className="grocery-title">{packageItem.name}</h3>
+                            <NavLink to={`/productrenderscreen/${packageItem.slug}`}><h3 className="grocery-title">{packageItem.name}</h3></NavLink>
                             <p className="grocery-countInStock">{packageItem.countInStock}</p>
                             <p className="grocery-description">{packageItem.description}</p>
                         </div>

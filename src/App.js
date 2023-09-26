@@ -9,6 +9,8 @@ import ElectronicsScreen from './screens/ElectronicsScreen';
 import Packages from './datascreen/Packages';
 import Fruits from './datascreen/Fruits';
 import Vegetables from './datascreen/Vegetables';
+import ProductRenderScreen from './screens/ProductRenderScreen';
+
 
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
           <Route path="/packages" element={<Packages />} />
           <Route path="/fruits" element={<Fruits />} />
           <Route path="/vegetables" element={<Vegetables />} />
+          <Route path="/productrenderscreen/:slug" element={<ProductRenderScreen />} />
 
         </Routes>
       </main>

@@ -6,8 +6,6 @@ import Fruits from '../datascreen/Fruits';
 import Vegetables from '../datascreen/Vegetables.js';
 import Packages from '../datascreen/Packages';
 
-
-
 function GroceryScreen() {
 
     const [activeComponent, setActiveComponent] = useState('packages');
@@ -21,10 +19,6 @@ function GroceryScreen() {
     } else if (activeComponent === 'vegetables') {
         componentToRender = <Vegetables />
     }
-
-
-
-
 
     return (
         <>
