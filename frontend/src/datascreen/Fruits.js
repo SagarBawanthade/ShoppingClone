@@ -1,21 +1,44 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import '../styles/GroceryScreen.css';
 import Rating from '../components/Rating.js';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
+import { Helmet } from 'react-helmet-async';
+import logger from 'use-reducer-logger';
+
+const initialState = {
+    loading: true,
+    fruits: [],
+};
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'FETCH_REQUEST':
+            return { ...state, loading: true };
+        case 'FETCH_SUCCESS':
+            return { ...state, fruits: action.payload.fruits, loading: false };
+        default:
+            return state;
+    }
+};
 
 function Fruits() {
 
-    const [fruits, setFruits] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [state, dispatch] = useReducer(logger(reducer), initialState);
 
 
     const fetchData = async () => {
+        dispatch({ type: 'FETCH_REQUEST' });
         try {
             const res = await axios.get('/api/groceryData');
             const filterData = res.data.filter((fruitItem) => fruitItem.category === 'fruits');
-            setFruits(filterData);
+            dispatch({
+                type: 'FETCH_SUCCESS',
+                payload: {
+                    fruits: filterData,
+                },
+            });
         } catch (error) {
             console.log(error);
         }
@@ -23,7 +46,6 @@ function Fruits() {
 
     useEffect(() => {
         fetchData();
-        setLoading(false);
     }, []);
 
     const handleClick = () => {
@@ -31,13 +53,15 @@ function Fruits() {
     }
 
     return (
-        <>
+        <><Helmet>
+            <title>Fruits</title>
+        </Helmet>
             <h6>Fruits</h6><br />
-            {loading ? (
+            {state.loading ? (
                 <LoadingBox />
             ) : (
                 <div className='grocery-list'>
-                    {fruits.map((fruitItem) => (
+                    {state.fruits.map((fruitItem) => (
                         <div key={fruitItem.slug} className='grocery-card'>
                             <div className="grocery-image">
                                 <NavLink to={`fruitItem/${fruitItem.slug}`}><img src={fruitItem.image} alt='packageItemImage' /></NavLink>

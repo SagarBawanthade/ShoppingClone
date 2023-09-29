@@ -8,11 +8,14 @@ import electronicsrLogo from '../images/electronics logo.png';
 import '../styles/HomeScreen.css';
 import Homescreentemplate from '../images/Homescreentemplate.jpg';
 import products from '../datasets/products.js';
+import { Helmet } from 'react-helmet-async';
 
 function HomeScreen() {
     return (
         <>
-
+            <Helmet>
+                <title>HomeScreen</title>
+            </Helmet>
             <div className='container'>
                 <div className='containers'>
                     <NavLink to='/' ><img src={offerLogo} alt="offerLogo" /></NavLink>

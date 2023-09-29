@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Fruits from '../datascreen/Fruits';
 import Vegetables from '../datascreen/Vegetables.js';
 import Packages from '../datascreen/Packages';
+import { Helmet } from 'react-helmet-async';
 
 function GroceryScreen() {
 
@@ -23,7 +24,9 @@ function GroceryScreen() {
 
     return (
         <>
-
+            <Helmet>
+                <title>GroceryScreen</title>
+            </Helmet>
             <div className='container'>
                 <h1>Groceries you want...</h1>
                 <br />

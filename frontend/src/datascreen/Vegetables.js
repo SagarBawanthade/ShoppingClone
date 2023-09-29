@@ -1,30 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import '../styles/GroceryScreen.css';
 import Rating from '../components/Rating.js';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
+import { Helmet } from 'react-helmet-async';
+import logger from 'use-reducer-logger';
+
+const initialState = {
+    loading: true,
+    vegetables: [],
+}
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'FETCH_REQUEST':
+            return { ...state, loading: true };
+        case 'FETCH_SUCCESS':
+            return { ...state, vegetables: action.payload.vegetables, loading: false };
+        default:
+            return state
+    };
+}
+
+
+
 
 function Vegetables() {
 
-    const [vegetables, setVegetables] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [state, dispatch] = useReducer(logger(reducer), initialState);
 
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     const fetchData = async () => {
+        dispatch({ type: 'FETCH_REQUEST' });
         try {
             const res = await axios.get('/api/groceryData');
             const filterData = res.data.filter((vegetableItem) => vegetableItem.category === 'vegetables');
-            setVegetables(filterData);
+            dispatch({
+                type: 'FETCH_SUCCESS',
+                payload: {
+                    vegetables: filterData
+                },
+            });
         } catch (error) {
             console.log(error);
         }
     };
 
-    useEffect(() => {
-        fetchData();
-        setLoading(false);
-    }, []);
+
 
     const handleClick = () => {
         console.log("click")
@@ -33,12 +58,15 @@ function Vegetables() {
 
     return (
         <>
+            <Helmet>
+                <title>Vegetables</title>
+            </Helmet>
             <h6>Vegetables</h6><br />
-            {loading ? (
+            {state.loading ? (
                 <LoadingBox />
             ) : (
                 <div className='grocery-list'>
-                    {vegetables.map((vegetableItem) => (
+                    {state.vegetables.map((vegetableItem) => (
                         <div key={vegetableItem.slug} className='grocery-card'>
                             <div className="grocery-image">
                                 <NavLink to={`vegetableItem/${vegetableItem}`}><img src={vegetableItem.image} alt='packageItemImage' /></NavLink>
