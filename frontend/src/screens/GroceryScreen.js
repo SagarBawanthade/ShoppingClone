@@ -9,6 +9,7 @@ import Packages from '../datascreen/Packages';
 function GroceryScreen() {
 
     const [activeComponent, setActiveComponent] = useState('packages');
+
     const handleClick = (component) => {
         setActiveComponent(component);
     }

@@ -1,12 +1,11 @@
 import express from 'express';
-import cors from 'cors';
 import groceryData from './datasets/grocerydata.js';
 const app = express();
-app.use(cors());
+
 
 
 app.get('/api/groceryData', (req, res) => {
-    res.send(groceryData.packages);
+    res.send(groceryData);
 });
 
 const port = 3001;
