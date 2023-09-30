@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import LoadingBox from '../components/LoadingBox';
 import { Helmet } from 'react-helmet-async';
-import logger from 'use-reducer-logger';
 
 const initialState = {
     loading: true,
@@ -18,15 +17,14 @@ const reducer = (state, action) => {
             return { ...state, loading: true };
         case 'FETCH_SUCCESS':
             return { ...state, packages: action.payload.packages, loading: false };
-        case 'FETCH_FAIL':
-            return { ...state, loading: false };
         default:
             return state;
     }
 };
 
 function Packages() {
-    const [state, dispatch] = useReducer(logger(reducer), initialState);
+    const [state, dispatch] = useReducer(reducer, initialState);
+
 
     useEffect(() => {
         fetchData();
@@ -48,9 +46,9 @@ function Packages() {
         }
     };
 
-    const handleClick = () => {
-        console.log('click');
-    };
+    const addToCartHandler = () => {
+
+    }
 
     return (
         <>
@@ -66,12 +64,12 @@ function Packages() {
                     {state.packages.map((packageItem) => (
                         <div key={packageItem.slug} className="grocery-card">
                             <div className="grocery-image">
-                                <NavLink to={`/packageItem/${packageItem.slug}`}>
+                                <NavLink to={`/productdetailsscreen/${packageItem.slug}`}>
                                     <img src={packageItem.image} alt="packageItemImage" />
                                 </NavLink>
                             </div>
                             <div className="info">
-                                <NavLink to={`/packageItem/${packageItem.slug}`}>
+                                <NavLink to={`/packages/${packageItem.slug}`}>
                                     <h3 className="grocery-title">{packageItem.name}</h3>
                                 </NavLink>
                                 <p className="grocery-countInStock">{packageItem.countInStock}</p>
@@ -83,9 +81,12 @@ function Packages() {
                                 </strong>
                                 <Rating rating={packageItem.rating} />
                                 <p className="grocery-rating">{packageItem.rating}</p>
-                                <button className="btn" onClick={handleClick}>
-                                    Add to cart
-                                </button>
+                                <NavLink to='/cartscreen' onClick={() => addToCartHandler}>
+                                    <button className="btn" >
+                                        Add to cart
+                                    </button>
+                                </NavLink>
+
                             </div>
                         </div>
                     ))}

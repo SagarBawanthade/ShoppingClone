@@ -1,2 +1,44 @@
 /*ProductrenderScreen css */
+.leftcontainer img {
+    height: 500px;
+    width: 520px;
+}
 
+.leftcontainer {
+    margin-right: 5rem;
+    width: 50%;
+    margin-top: 10%;
+
+
+}
+
+.grocery-rating {
+    text-align: center;
+    background-color: #388e3c;
+    width: 35px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+
+}
+
+.rightcontainer {
+    width: 800px;
+    margin-top: 5%;
+}
+
+h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+h4 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 48px;
+}
+
+.secondary-para {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}

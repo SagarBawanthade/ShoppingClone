@@ -39,8 +39,9 @@ nav img {
 }
 
 footer {
-  margin-top: auto;
-  /*bottom: 0;*/
+  position: fixed;
+  margin-bottom: auto;
+  bottom: 0;
   width: 100%;
 
 

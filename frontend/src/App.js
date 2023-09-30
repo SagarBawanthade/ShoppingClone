@@ -1,19 +1,19 @@
 import './App.css';
 import mainLogo from './images/mainLogo.png';
 import HomeScreen from './screens/HomeScreen.js';
-import { Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
+import CartScreen from './screens/CartScreen.js';
+import ProductDetailsScreen from './screens/ProductDetailsScreen';
 import GroceryScreen from './screens/GroceryScreen';
-import FashionsScreen from './screens/FashionsScreen';
-import MobilesScreen from './screens/MobilesScreen';
-import ElectronicsScreen from './screens/ElectronicsScreen';
-import Packages from './datascreen/Packages';
-import Fruits from './datascreen/Fruits';
-import Vegetables from './datascreen/Vegetables';
-import ProductRenderScreen from './screens/ProductRenderScreen';
-
-
+import Badge from 'react-bootstrap/Badge';
+import { useContext } from 'react';
+import { Store } from './Store';
 
 function App() {
+
+  const { state } = useContext(Store);
+  const { cart } = state;
+
   return (
     <>
       <nav className="navbar bg-primary navbar-expand-lg ">
@@ -31,7 +31,14 @@ function App() {
             <ul className="navbar-nav me-auto mb-3 mb-lg-0">
               <li className="nav-item "><a className="nav-link navcustom" href='/' >Login</a></li>
               <li className="nav-item"><a className="nav-link navcustom " href='/' >Sign up</a> </li>
-              <li className="nav-item"><a className="nav-link navcustom " href='/' >Cart</a> </li>
+              <li className="nav-item"><NavLink className="nav-link navcustom " to='/cartscreen'>Cart
+                {cart.cartItems.length > 0 && (
+                  <Badge pill bg="danger">
+                    {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                  </Badge>
+                )}
+              </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -41,13 +48,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/groceryscreen" element={<GroceryScreen />} />
-          <Route path="/fashionsscreen" element={<FashionsScreen />} />
-          <Route path="/mobilesscreen" element={<MobilesScreen />} />
-          <Route path="/electronicsscreen" element={<ElectronicsScreen />} />
-          <Route path="/packages" element={<Packages />} />
-          <Route path="/fruits" element={<Fruits />} />
-          <Route path="/vegetables" element={<Vegetables />} />
-          <Route path="/productrenderscreen/:slug" element={<ProductRenderScreen />} />
+          <Route path="/cartscreen" element={<CartScreen />} />
+          <Route path="/product/:slug" element={<ProductDetailsScreen />} />
 
         </Routes>
       </main>

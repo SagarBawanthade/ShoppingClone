@@ -5,7 +5,8 @@ const groceryData = [
         image: "https://assets.axfood.se/image/upload/f_auto,t_500/07310867561419_C1N1_s01",
         category: "packages",
         price: "₹79",
-        countInStock: 50,
+        countInStock: 0,
+        numReviews: 10,
         rating: 4.5,
         description: "Ready to drink apple juice from concentrate. Fresh and sour taste. Fits the breakfast table, as quencher and meal drink.",
 
@@ -17,6 +18,7 @@ const groceryData = [
         category: "packages",
         price: "₹99",
         countInStock: 40,
+        numReviews: 10,
         rating: 4.8,
         description: "Classic sour milk made from Swedish milk from Arlagårdar. The flavor is slightly acidic with characteristically sour milk aroma and light creaminess. The texture is a bit thicker and the sour milk can be eaten with muesli, cereal, fruit or berries. Sour milk has a long history in Sweden - already in the Viking era you have had sour milk-like products. The brand Arla Ko guarantees that the product is made of 100% Swedish milk.",
 
@@ -28,6 +30,7 @@ const groceryData = [
         category: "packages",
         price: "₹89",
         countInStock: 30,
+        numReviews: 10,
         rating: 3.7,
         description: "Mild and smooth vanilla yoghurt made of Swedish milk from Arlagårdar. The texture is creamy and tender, the taste soft and round. The yoghurt fits well for breakfast and snacks for the whole family. Eat it as it is or with muesli, flakes, fruit and berries. Vanilla yoghurt is also a perfect base for smoothies. The brand Arla Ko guarantees that the product is made of 100% Swedish milk.",
 
@@ -39,6 +42,7 @@ const groceryData = [
         category: "packages",
         price: "₹89",
         countInStock: 20,
+        numReviews: 10,
         rating: 4.2,
         description: "Sour cream made from fresh cream from Swedish Arlagårdar. Sour cream is a real classic that has its obvious place for both weekday and weekend. It has an acidic, creamy and fresh taste with a slightly creamy texture. The product is excellent as a natural accessory or as a base in cold sauces and dressings. With its fresh acid it softens the heat from spicy dishes. The brand Arla Ko guarantees that the product is made of 100% Swedish milk.",
 
@@ -51,6 +55,7 @@ const groceryData = [
         category: "fruits",
         price: "₹120",
         countInStock: 10,
+        numReviews: 10,
         rating: 4.3,
         description: "Red Delicious is a dark red apple with relatively soft pulp and sweet taste.",
 
@@ -63,6 +68,7 @@ const groceryData = [
         category: "fruits",
         price: "₹40",
         countInStock: 90,
+        numReviews: 10,
         rating: 4.5,
         description: "An ecologically grown banana. Bananas are good as snacks. The banana is temperature sensitive, very sensitive to dehydration, ethylene and cold damage. Store in room temperature or cool, never in a refrigerator.",
 
@@ -74,7 +80,8 @@ const groceryData = [
         image: "https://tiimg.tistatic.com/fp/1/007/144/natural-fresh-orange-fruits-433.jpg",
         category: "fruits",
         price: "₹112",
-        countInStock: 50,
+        countInStock: 0,
+        numReviews: 10,
         rating: 4.0,
         description: "There are many different types of oranges that ripen and is sold during different parts of the year. The orange is a very important vitamin C source and the vitamins are best kept if the fruit is eaten naturally.",
 
@@ -87,6 +94,7 @@ const groceryData = [
         category: "fruits",
         price: "₹119",
         countInStock: 10,
+        numReviews: 10,
         rating: 4.9,
         description: "Mango has a fresh, powerful and sweet taste, but a special exotic shade. Inside there is a large, oval kernel in which the pulp is grown in. This makes the best way to cut mango is with the shell on. Divide the fruit by cutting along on both sides of the core. Mango can be eaten naturally or in desserts, entrees and main courses.",
 
@@ -99,6 +107,7 @@ const groceryData = [
         category: "vegetables",
         price: "₹89",
         countInStock: 30,
+        numReviews: 10,
         rating: 4.1,
         description: "White cabbage can be used as a raw food, but it also fits well in for example cabbage rolls, cabbage pudding, cabbage soup, etc. ",
 
@@ -111,6 +120,7 @@ const groceryData = [
         category: "vegetables",
         price: "₹79",
         countInStock: 150,
+        numReviews: 10,
         rating: 4.9,
         description: "Solid potatoes. A good allround potato that fits well most of the time.",
 
@@ -122,6 +132,7 @@ const groceryData = [
         category: "vegetables",
         price: "₹49",
         countInStock: 100,
+        numReviews: 10,
         rating: 4.6,
         description: "Yellow onion is a good flavoring. Fits well both cold and hot in cooking.",
 
@@ -133,7 +144,8 @@ const groceryData = [
         image: "https://img.freepik.com/free-photo/tomatoes_144627-15413.jpg?w=2000",
         category: "vegetables",
         price: "₹99",
-        countInStock: 80,
+        countInStock: 0,
+        numReviews: 10,
         rating: 4.7,
         description: "Round and fine tomatoes from Sweden. Rinse and have in the salad or on the sandwich.",
 
