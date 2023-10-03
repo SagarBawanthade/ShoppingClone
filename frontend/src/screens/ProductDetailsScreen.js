@@ -51,8 +51,10 @@ function ProductRenderScreen() {
         if (data.countInStock < quantity) {
             window.alert("Sorry Product is out of Stock")
             return;
+
         }
         ctxDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
+        console.log("ADDED ITEM TO CART");
     };
 
 
