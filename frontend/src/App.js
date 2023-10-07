@@ -51,6 +51,7 @@ function App() {
           <Route path="/cartscreen" element={<CartScreen />} />
           <Route path="/product/:slug" element={<ProductDetailsScreen />} />
 
+
         </Routes>
       </main>
 

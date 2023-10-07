@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useReducer } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/ProductRenderScreen.css';
 import { Store } from '../Store';
-import { NavLink } from 'react-router-dom';
 
 
 const reducer = (state, action) => {
@@ -20,6 +19,7 @@ const reducer = (state, action) => {
 
 
 function ProductRenderScreen() {
+    const navigate = useNavigate();
     const params = useParams();
     const { slug } = params;
 
@@ -45,16 +45,20 @@ function ProductRenderScreen() {
 
     const { cart } = state;
     const addToCart = async () => {
-        const existItem = cart.cartItems.find((x) => x.slug === product.slug);
+        const existItem = cart.cartItems.find((x) => x.id === product.id);
         const quantity = existItem ? existItem.quantity + 1 : 1;
-        const { data } = await axios.get(`/api/groceryData/${product.slug}`);
+        const { data } = await axios.get(`/api/groceryData/${product.id}`);
         if (data.countInStock < quantity) {
             window.alert("Sorry Product is out of Stock")
             return;
 
         }
-        ctxDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
-        console.log("ADDED ITEM TO CART");
+        ctxDispatch({
+            type: 'CART_ADD_ITEM',
+            payload: { ...product, quantity }
+        });
+        navigate('/cartscreen');
+
     };
 
 
@@ -87,7 +91,7 @@ function ProductRenderScreen() {
                         {product.countInStock === 0 ? (
                             <button disabled style={{ width: "200px" }} className='btn'>Add to cart</button>
                         ) : (
-                            <NavLink to='/cartscreen'><button onClick={addToCart} style={{ width: "200px" }} className='btn'>Add to cart</button></NavLink>
+                            <button onClick={addToCart} style={{ width: "200px" }} className='btn'>Add to cart</button>
                         )}
                     </div>
 

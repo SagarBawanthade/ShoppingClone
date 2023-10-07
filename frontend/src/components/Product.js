@@ -11,18 +11,29 @@ function Product(props) {
     const { product } = props;
 
     const { state, dispatch: ctxDispatch } = useContext(Store);
+    const {
+        cart: { cartItems },
+    } = state;
 
-    const { cart } = state;
-    const addToCart = async () => {
-        const existItem = cart.cartItems.find((x) => x.slug === product.slug);
-        const quantity = existItem ? existItem.quantity + 1 : 1;
-        const { data } = await axios.get(`/api/groceryData/${product.slug}`);
-        if (data.countInStock < quantity) {
-            window.alert("Sorry Product is out of Stock")
-            return;
+    const addToCartHandler = async () => {
+        try {
+            const existItem = cartItems.find((x) => x.id === product.id);
+            const quantity = existItem ? existItem.quantity + 1 : 1;
+            const { data } = await axios.get(`/api/groceryData/${product.id}`);
+            if (data.countInStock < quantity) {
+                window.alert('Sorry. Product is out of stock');
+                return;
+
+            }
+            ctxDispatch({
+                type: 'CART_ADD_ITEM',
+                payload: { ...product, quantity },
+            });
+        } catch (err) {
+            console.log(err);
+
         }
-        ctxDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
-        console.log("ADDED ITEM TO CART");
+
     };
 
 
@@ -47,10 +58,10 @@ function Product(props) {
                 <Rating rating={product.rating} />
                 <p className="grocery-rating">{product.rating}</p>
                 {product.countInStock === 0 ? (
-                    <button disabled onClick={addToCart} className="btn" >
+                    <button disabled onClick={addToCartHandler} className="btn" >
                         Add to cart
                     </button>) : (
-                    <button onClick={addToCart} className="btn" >
+                    <button onClick={addToCartHandler} className="btn" >
                         Add to cart
                     </button>
 

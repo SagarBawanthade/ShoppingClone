@@ -1,17 +1,19 @@
 const groceryData = [
     {
+        id: 1,
         name: "Apple Juice",
         slug: "barvo-apple-juice",
         image: "https://assets.axfood.se/image/upload/f_auto,t_500/07310867561419_C1N1_s01",
         category: "packages",
         price: "₹79",
-        countInStock: 0,
+        countInStock: 1,
         numReviews: 10,
         rating: 4.5,
         description: "Ready to drink apple juice from concentrate. Fresh and sour taste. Fits the breakfast table, as quencher and meal drink.",
 
     },
     {
+        id: 2,
         name: "Sour Milk",
         slug: "arla-sour-milk",
         image: "https://images.deliveryhero.io/image/fd-op/NV/Formaterade%20Bilder/07310865087935.jpg?height=480",
@@ -24,6 +26,7 @@ const groceryData = [
 
     },
     {
+        id: 3,
         name: "Yogurt",
         slug: "arla-mild-yogurt",
         image: "https://res.cloudinary.com/coopsverige/image/upload/e_sharpen,f_auto,fl_clip,fl_progressive,q_90,c_lpad,g_center,h_660,w_660/v1631714477/cloud/234051.jpg",
@@ -36,6 +39,7 @@ const groceryData = [
 
     },
     {
+        id: 4,
         name: "Cream",
         slug: "arla-sour-cream",
         image: "https://swedishgrocerystore.se/cdn/shop/products/Me-0.01_Graddfil_530x.jpg?v=1655379353",
@@ -49,6 +53,7 @@ const groceryData = [
 
     },
     {
+        id: 5,
         name: "Apple",
         slug: "apple-red",
         image: "https://media.istockphoto.com/id/470908792/photo/red-apple.webp?b=1&s=170667a&w=0&k=20&c=kNV-889kApkzIqpRvMVgJGi34dcCDoZYgj2z-NNoOOg=",
@@ -62,6 +67,7 @@ const groceryData = [
 
     },
     {
+        id: 6,
         name: "Banana",
         slug: "yellow-banana",
         image: "https://m.media-amazon.com/images/I/51ebZJ+DR4L._AC_UF1000,1000_QL80_.jpg",
@@ -75,12 +81,13 @@ const groceryData = [
 
     },
     {
+        id: 7,
         name: "Orange",
         slug: "orange-orange",
         image: "https://tiimg.tistatic.com/fp/1/007/144/natural-fresh-orange-fruits-433.jpg",
         category: "fruits",
         price: "₹112",
-        countInStock: 0,
+        countInStock: 50,
         numReviews: 10,
         rating: 4.0,
         description: "There are many different types of oranges that ripen and is sold during different parts of the year. The orange is a very important vitamin C source and the vitamins are best kept if the fruit is eaten naturally.",
@@ -88,6 +95,7 @@ const groceryData = [
 
     },
     {
+        id: 8,
         name: "Mango",
         slug: "mango-green",
         image: "https://m.media-amazon.com/images/I/41EvGpCFECL._AC_UF1000,1000_QL80_.jpg",
@@ -101,6 +109,7 @@ const groceryData = [
 
     },
     {
+        id: 9,
         name: "Cabage",
         slug: "fresh-cabage",
         image: "https://cdn-prod.medicalnewstoday.com/content/images/articles/284/284823/one-big-cabbage.jpg",
@@ -114,6 +123,7 @@ const groceryData = [
 
     },
     {
+        id: 10,
         name: "Potato",
         slug: "brown-potato",
         image: "https://m.media-amazon.com/images/I/61LikZe08nL._AC_UF350,350_QL80_.jpg",
@@ -126,6 +136,7 @@ const groceryData = [
 
     },
     {
+        id: 11,
         name: "Onion",
         slug: "yellow-onion",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJQ1TDVZ90nxrNXBBaSj27evJD4Y1YoBm4rwE83_xiOWJ-FgWf_mLVO0kb04iaXo-STcc&usqp=CAU",
@@ -139,6 +150,7 @@ const groceryData = [
 
     },
     {
+        id: 12,
         name: "Tomato",
         slug: "red-tomato",
         image: "https://img.freepik.com/free-photo/tomatoes_144627-15413.jpg?w=2000",

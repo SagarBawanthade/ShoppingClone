@@ -1,10 +1,33 @@
 /**/
 
+
 .cart-item {
     display: flex;
 }
 
-.cart-item img {
-    height: 60%px;
-    width: 60%;
+ul li img {
+    height: 200px;
+    width: 200px;
+}
+
+.manipulatecart {
+    margin-right: 370px;
+    display: flex;
+}
+
+.cart {
+    display: flex;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.proceedtocheckout {
+    width: 500px;
+}
+
+.list-item {
+    display: flex;
+    list-style: none;
 }

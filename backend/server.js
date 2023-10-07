@@ -18,12 +18,13 @@ app.get('/api/groceryData/slug/:slug', (req, res) => {
     };
 });
 
-app.get('/api/groceryData/:slug', (req, res) => {
-    const product = groceryData.find((x) => x.slug === req.params.slug);
+app.get('/api/groceryData/:id', (req, res) => {
+    const product = groceryData.find((x) => x.id === parseInt(req.params.id));
     if (product) {
         res.send(product);
     } else {
         res.status(404).send({ message: 'PRODUCT NOT FOUND' })
+
     };
 });
 
