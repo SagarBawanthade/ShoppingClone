@@ -64,14 +64,14 @@ function CartScreen() {
                                             <li><img src={item.image} alt={item.name} className="img-fluid rounded img-thumbnail" />{' '}</li>
                                             <NavLink to={`/product/${item.slug}`}>{item.name}</NavLink>
 
-                                            <li><button onClick={() => updateCartHandler(item, item.quantity - 1)
+                                            <li><button style={{ marginRight: "20px", marginLeft: "5px" }} onClick={() => updateCartHandler(item, item.quantity - 1)
                                             }
                                                 variant="light"
                                                 disabled={item.quantity === 1}>
                                                 <i className="fas fa-minus-circle"></i>
                                             </button>{' '} <span>{item.quantity}</span>{' '}</li>
 
-                                            <li><button onClick={() => updateCartHandler(item, item.quantity + 1)
+                                            <li><button style={{ marginRight: "20px", marginLeft: "5px" }} onClick={() => updateCartHandler(item, item.quantity + 1)
                                             }
                                                 variant="light"
                                             >
@@ -80,7 +80,8 @@ function CartScreen() {
 
                                             <li>{item.price}</li>
 
-                                            <li><button onClick={() => removeItemHandler(item)}
+                                            <li><button style={{ marginRight: "20px", marginLeft: "5px" }}
+                                                onClick={() => removeItemHandler(item)}
                                                 variant="light"><i className="fas fa-trash"></i></button></li>
                                         </ul>
                                     </div>
